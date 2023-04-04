@@ -2,8 +2,12 @@ name: GitHub Actions Build and Deploy Demo
 on:
   push:
     branches:
-      - main      
+      - main   
+  # Enable manual execute
   workflow_dispatch:
+  # Execute every 24 hours
+  schedule: 
+    - cron: '0 * * * *'
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
